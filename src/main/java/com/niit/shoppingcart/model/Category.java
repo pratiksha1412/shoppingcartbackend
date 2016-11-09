@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table
+@Table(name="category")// if the table name is same as class name u no need to specify
 @Component
 public class Category {
 

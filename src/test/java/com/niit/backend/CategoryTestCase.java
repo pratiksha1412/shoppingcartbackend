@@ -1,6 +1,8 @@
-/*package com.niit.backend;
+package com.niit.backend;
 
+import org.junit.Assert;
 import org.junit.BeforeClass;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -8,7 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.niit.shoppingcart.dao.CategoryDAO;
 import com.niit.shoppingcart.model.Category;
 
-import junit.framework.Assert;
+
 
 public class CategoryTestCase {
 
@@ -33,7 +35,7 @@ public class CategoryTestCase {
 		System.out.println("THE OBJECT ARE CREATED");
 	}
       
-      // 
+      // start writing junit test case for all method in DAO
       //
 	
 	//@SuppressWarnings("deprecation")
@@ -41,9 +43,9 @@ public class CategoryTestCase {
 	public void createCategoryTestCase()
 	
 	{
-		category.setId("CAT 07");
-		category.setDescription("mobile category");
-		category.setName("mod Cat");
+		category.setId("4");
+		category.setDescription("footware");
+		category.setName("unisex");
 		
 		
 		
@@ -55,7 +57,7 @@ public class CategoryTestCase {
 	@Test
 	public void deleteCategoryTestCase()
 	{
-		category.setId("mod-07");
+		category.setId("2");
 		Boolean status= categoryDAO.delete(category);
 		Assert.assertEquals("Delete Category Test Case",true, status);
 	}
@@ -64,10 +66,12 @@ public class CategoryTestCase {
 	@Test
 	public void updateCategoryTestCase()
 	{
-		category.setId("mod-07");
+		
+		
+		category.setId("3");
 		Boolean status= categoryDAO.update(category);
-		category.setDescription(this is mobile category);
-		Boolean status = category.update(category);
+		category.setDescription("this is footware Category");
+		//Boolean status = category.update(category);
 		Assert.assertEquals("update Category Test Case",true, status);
 	}
 	
@@ -84,10 +88,9 @@ public class CategoryTestCase {
 	@Test
 	public void getAllCategoryTestCase()
 	{
-		Assert.assertEquals("get all test cases ",12,)
+		Assert.assertEquals("get all test cases ",3,categoryDAO.list().size());
 	}
 	
 	
 	
 }
-*/

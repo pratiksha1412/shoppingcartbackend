@@ -10,10 +10,12 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate3.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 
+import com.niit.shoppingcart.model.Category;
+
 
 
 @Configuration
-@ComponentScan("com.niit.yamahaonlinebackend")
+@ComponentScan("com.niit.BackEnd")
 public class ApplicationContextConfig {
 	
 	
@@ -40,7 +42,9 @@ public class ApplicationContextConfig {
 	@Bean(name="sessionFactory")
 	public SessionFactory getSessionFactory(DataSource dataSource){
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
+		
 		sessionBuilder.addProperties(getHibernateProperties());
+		sessionBuilder.addAnnotatedClass(Category.class);
 		return sessionBuilder.buildSessionFactory();
 		
 	}

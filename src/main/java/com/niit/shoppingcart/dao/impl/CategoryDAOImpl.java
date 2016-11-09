@@ -26,7 +26,12 @@ public class CategoryDAOImpl implements CategoryDAO {
 	@Transactional
 	public boolean save(Category category) {
 		try {
-			sessionFactory.getCurrentSession().save(category);
+			
+			if(get(category.getId())!=null)
+			{
+				return false;
+			}
+				sessionFactory.getCurrentSession().save(category);
 			
 			return true;
 			
@@ -41,6 +46,10 @@ public class CategoryDAOImpl implements CategoryDAO {
 	@Transactional
 	public boolean update(Category category) {
 		try {
+			if(get(category.getId()) !=null)
+			{
+				return false;
+			}
 			sessionFactory.getCurrentSession().update(category);
 			
 			return true;
@@ -58,6 +67,11 @@ public class CategoryDAOImpl implements CategoryDAO {
 	@Transactional
 	public boolean delete(Category category) {
 		try {
+			
+			if(get(category.getId())== null)
+					{
+				return false;
+					}
 			sessionFactory.getCurrentSession().delete(category);
 			
 			return true;
@@ -70,10 +84,10 @@ public class CategoryDAOImpl implements CategoryDAO {
 		
 		
 	}
-
+@Transactional
 	public Category get(String id) {
 		
-		return(Category) sessionFactory.getCurrentSession().get(Category.class,id);
+		return(Category) sessionFactory.openSession().get(Category.class,id);
 		
 		
 		
