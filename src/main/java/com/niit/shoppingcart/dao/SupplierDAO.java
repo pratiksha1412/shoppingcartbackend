@@ -1,14 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
 package com.niit.shoppingcart.dao;
 
 import java.util.List;
@@ -20,13 +9,13 @@ public interface SupplierDAO {
 
 	//CRUD OPERATION
 	//create---save
-	public boolean save(Supplier supplier);
+	public boolean save(com.niit.shoppingcart.model.Supplier supplier);
 	
-	public boolean update(Supplier supplier);
+	public boolean update(com.niit.shoppingcart.model.Supplier supplier);
 	
-	public boolean delete(Supplier supplier);
+	public boolean delete(com.niit.shoppingcart.model.Supplier supplier);
 	
-	public Category get(String id);
+	public Supplier get(String id);
 	
 	
 	public List<Supplier > list();

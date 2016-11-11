@@ -11,6 +11,7 @@ import org.springframework.orm.hibernate3.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 
 import com.niit.shoppingcart.model.Category;
+import com.niit.shoppingcart.model.Supplier;
 
 
 
@@ -19,14 +20,14 @@ import com.niit.shoppingcart.model.Category;
 public class ApplicationContextConfig {
 	
 	
-	@Bean(name="dataSource")
+	@Bean(name="sessionFactory")
 	
 	public DataSource getDataSource(){
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.h2.driver");
 		dataSource.setUrl("jdbc:h2:~/test");
 		dataSource.setUsername("sa");
-		dataSource.setPassword("");
+		dataSource.setPassword("sa");
 		return dataSource;
 	}
 	
@@ -45,6 +46,7 @@ public class ApplicationContextConfig {
 		
 		sessionBuilder.addProperties(getHibernateProperties());
 		sessionBuilder.addAnnotatedClass(Category.class);
+		sessionBuilder.addAnnotatedClass(Supplier.class);
 		return sessionBuilder.buildSessionFactory();
 		
 	}
@@ -53,7 +55,7 @@ public class ApplicationContextConfig {
 	@Bean(name="transactionManager")
 	public HibernateTransactionManager getTransactionalManager(SessionFactory sessionFactory){
 		
-		HibernateTransactionManager transactionManager = new HibernateTransactionManager();
+		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
 		return transactionManager;
 	}
 	

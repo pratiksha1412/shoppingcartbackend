@@ -30,7 +30,7 @@ public class CategoryTestCase {
 		context = new AnnotationConfigApplicationContext();
 		context.scan("com.niit.shoppingcart");	
 		context.refresh();
-		categoryDAO  = (CategoryDAO) context.getBean ("categoryDAO");
+		categoryDAO  = (CategoryDAO) context.getBean("categoryDAO");
 		category  = (Category) context.getBean("category");
 		System.out.println("THE OBJECT ARE CREATED");
 	}
@@ -39,7 +39,7 @@ public class CategoryTestCase {
       //
 	
 	//@SuppressWarnings("deprecation")
-	@Test
+	/*@Test
 	public void createCategoryTestCase()
 	
 	{
@@ -52,7 +52,7 @@ public class CategoryTestCase {
 		Boolean status = categoryDAO.save(category);
 		Assert.assertEquals("create Category Test Case",true, status);
 	}
-	
+	*/
 	
 	@Test
 	public void deleteCategoryTestCase()
@@ -63,7 +63,7 @@ public class CategoryTestCase {
 	}
 	
 	
-	@Test
+	/*@Test
 	public void updateCategoryTestCase()
 	{
 		
@@ -85,12 +85,10 @@ public class CategoryTestCase {
 		
 	}
 	
-	@Test
+     @Test
 	public void getAllCategoryTestCase()
 	{
 		Assert.assertEquals("get all test cases ",3,categoryDAO.list().size());
 	}
-	
-	
-	
+	*/
 }
