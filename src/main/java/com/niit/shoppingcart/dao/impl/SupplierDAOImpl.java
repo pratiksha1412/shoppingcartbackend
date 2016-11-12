@@ -1,4 +1,4 @@
-package com.niit.shoppingcart.dao.impl;
+/*package com.niit.shoppingcart.dao.impl;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -21,7 +21,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 	public SupplierDAOImpl(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-/*
+
 	@Transactional
 	public boolean save(Supplier supplier) {
 
@@ -94,14 +94,14 @@ public class SupplierDAOImpl implements SupplierDAO {
 		return query.list();
 
 	}
-*/
 
-	public boolean save(com.niit.shoppingcart.model.Supplier supplier) {
+
+	public boolean save(Supplier supplier) {
 		
 		// TODO Auto-generated method stub
 		try {
 			
-			if(get(supplier.getId())!= null){
+			if(get(supplier.get())!= null){
 			return false;
 			}
 			sessionFactory.getCurrentSession().save(supplier);
@@ -114,13 +114,13 @@ public class SupplierDAOImpl implements SupplierDAO {
 		}
 	}
 
-	public boolean update(com.niit.shoppingcart.model.Supplier supplier) {
+	public boolean update (Supplier supplier) {
 		// TODO Auto-generated method stub
 		
 		
 		try {
 			
-			if(get(supplier.getId())!=null){
+			if(get(suplier.getId())!=null){
 			return false;
 			}
 			sessionFactory.getCurrentSession().update(supplier);
@@ -133,7 +133,7 @@ public class SupplierDAOImpl implements SupplierDAO {
 		}
 	}
 
-	public boolean delete(com.niit.shoppingcart.model.Supplier supplier) {
+	public boolean delete(Supplier supplier) {
 		// TODO Auto-generated method stub
 		try {
 			
@@ -160,6 +160,11 @@ public class SupplierDAOImpl implements SupplierDAO {
           Query query= sessionFactory.getCurrentSession().createQuery(hql);
 		return query.list();
 	}
+	public boolean update(Supplier supplier) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 
 }
+I*/

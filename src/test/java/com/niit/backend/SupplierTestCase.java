@@ -1,4 +1,4 @@
-package com.niit.backend;
+/*package com.niit.backend;
 
 import static org.junit.Assert.*;
 
@@ -86,3 +86,4 @@ public class SupplierTestCase {
 	
 
 }
+*/

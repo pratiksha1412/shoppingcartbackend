@@ -9,11 +9,11 @@ public interface SupplierDAO {
 
 	//CRUD OPERATION
 	//create---save
-	public boolean save(com.niit.shoppingcart.model.Supplier supplier);
+	public boolean save(Supplier supplier);
 	
-	public boolean update(com.niit.shoppingcart.model.Supplier supplier);
+	public boolean update(Supplier supplier);
 	
-	public boolean delete(com.niit.shoppingcart.model.Supplier supplier);
+	public boolean delete(Supplier supplier);
 	
 	public Supplier get(String id);
 	
