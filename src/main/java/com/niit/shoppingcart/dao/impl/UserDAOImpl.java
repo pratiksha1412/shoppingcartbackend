@@ -15,7 +15,7 @@ import com.niit.shoppingcart.model.User;
 public class UserDAOImpl implements UserDAO {
 @Autowired
 	SessionFactory sessionFactory;
-	public UserDAOImpl (SessionFactory sessionfactory)
+	public UserDAOImpl (SessionFactory sessionFactory)
 	{
        this.sessionFactory=sessionFactory;		
 	}

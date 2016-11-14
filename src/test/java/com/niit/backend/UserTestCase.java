@@ -81,7 +81,7 @@ public void getUserTestCase()
 	Assert.assertEquals("getUserTestCase",null,userDAO.get("p2"));
 	}
 
-
+@Test
 public void getAllUserTestCase()
 {
 	Assert.assertEquals("get all test cases",1,userDAO.list().size());
